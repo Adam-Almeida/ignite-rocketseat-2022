@@ -1,10 +1,13 @@
-
-
-class CreateCourseService {
-    execute(name: string, educator: string, duration: number) {
-        console.log(name, duration, educator)
-
-    }
+interface Course {
+  name: string;
+  educator: string;
+  duration: number;
 }
 
-export default new CreateCourseService
+class CreateCourseService {
+  execute({ name, educator, duration }: Course) {
+    console.log(name, educator, duration);
+  }
+}
+
+export default new CreateCourseService();
